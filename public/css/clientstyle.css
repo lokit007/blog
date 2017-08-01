@@ -1,0 +1,71 @@
+body {
+    background: url(../images/furley_bg.png) center;
+}
+.clear {
+    clear: both;
+}
+div#div-logo {
+    float: left;
+    margin-right: 5%;
+}
+div#div-logo img {
+    max-height: 180px;
+}
+div#div-solo {
+    float: left;
+    max-width: 75%;
+    max-height: 180px;
+    overflow: hidden;
+}
+div#div-solo h1 {
+    text-shadow: 2px 3px 4px grey;
+    font-size: 3em;
+    font-weight: bold;
+    color: #fd5a5a;
+}
+div#div-solo p {
+    font-weight: 600;
+    color: gray;
+    font-style: italic;
+    font-size: 1.1em;
+}
+nav.navbar {
+    border: 3px solid gray;
+    margin-top: 15px;
+}
+form.navbar-form.navbar-left div.input-group input {
+    width: 300px;
+}
+li.active {
+    font-weight: bold;
+    border-bottom: 5px solid red;
+    height: 50px;
+}
+.navbar-header {
+    border-right: 3px solid gray;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px;
+}
+ul.nav.navbar-nav li:hover {
+    border-bottom: 3px solid red;
+    font-weight: bold;
+    height: 50px;
+}
+nav.navfix {
+    width: 100%;
+    position: fixed;
+    top: -15px;
+    left: 0;
+    background-color: cornsilk;
+}
+div#footer {
+    height: 250px;
+    border-top: 1px solid gray;
+}
+span#designby {
+    font-style: italic;
+    color: gray;
+    margin: 10px 5%;
+    display: block;
+    border-bottom: 1px solid lightgray;
+}

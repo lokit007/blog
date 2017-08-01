@@ -1,0 +1,19 @@
+.container-fluid
+    .navbar-header: a(class="navbar-brand", href="#") NHANVIET
+    ul.nav.navbar-nav
+        li.active: a(href="#") #{ __("menu-home") }
+        li:  a(href="#") Giới thiệu
+        li:  a(href="#") Chia sẻ
+        li:  a(href="#") Thông tin
+        form.navbar-form.navbar-left: .input-group
+            input(type="text", class="form-control", placeholder="Search ...")
+            .input-group-btn
+                button(class="btn btn-default", type="submit")
+                    i.glyphicon.glyphicon-search
+    ul.nav.navbar-nav.navbar-right
+        li: a(href="#")
+            span.glyphicon.glyphicon-user
+            |  #{ __("menu-signup") }
+        li: a(href="#")
+            span.glyphicon.glyphicon-log-in
+            |  #{ __("menu-login") }
