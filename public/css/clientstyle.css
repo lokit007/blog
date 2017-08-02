@@ -59,7 +59,6 @@ nav.navfix {
     background-color: cornsilk;
 }
 div#footer {
-    height: 250px;
     border-top: 1px solid gray;
 }
 span#designby {
@@ -68,4 +67,19 @@ span#designby {
     margin: 10px 5%;
     display: block;
     border-bottom: 1px solid lightgray;
+}
+.footer-sub label {
+    display: block;
+}
+.footer-sub {
+    width: 25%;
+    margin-left: 5%;
+    padding: 5px;
+    float: left;
+}
+.footer-sub form span {
+    font-style: italic;
+    font-weight: bold;
+    color: slategray;
+    padding: 5px;
 }
