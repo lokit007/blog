@@ -83,3 +83,14 @@ span#designby {
     color: slategray;
     padding: 5px;
 }
+div#content form {
+    margin-bottom: 20px;
+    min-width: 300px;
+    max-width: 50%;
+}
+form .form-control {
+    margin-bottom: 15px;
+}
+span.notnull {
+    color: red;
+}

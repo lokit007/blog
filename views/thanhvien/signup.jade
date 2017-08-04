@@ -1,0 +1,29 @@
+extends ../template
+
+block content
+    #content
+        form(action="/signup", method="POST")
+            label Tài khoản đăng ký 
+                span.notnull (*)
+            input(type="text", name="username", placeholder="Nhập ở đây ...").form-control
+            label Mật khẩu 
+                span.notnull (*)
+            input(type="password", name="password", placeholder="Nhập ở đây ...").form-control
+            label Xác nhận mật khẩu 
+            input(type="password", name="passreplay", placeholder="Nhập ở đây ...").form-control
+            label Họ và tên
+            input(type="text", name="username", placeholder="Nhập ở đây ...").form-control
+            label Hình đại diện
+            input(type="file", name="username", placeholder="Nhập ở đây ...").form-control
+            label Ngày sinh
+            input(type="text", name="username", placeholder="Nhập ở đây ...").form-control
+            label Email
+            input(type="text", name="username", placeholder="Nhập ở đây ...").form-control
+            label Điện thoại
+            input(type="text", name="username", placeholder="Nhập ở đây ...").form-control
+            label Nghề nghiệp hiện tại
+            input(type="text", name="username", placeholder="Nhập ở đây ...").form-control
+            label Đôi nét bản thân
+            input(type="text", name="username", placeholder="Nhập ở đây ...").form-control
+            label CV đính kèm
+            input(type="file", name="username", placeholder="Nhập ở đây ...").form-control

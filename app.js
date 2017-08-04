@@ -1,13 +1,29 @@
 let express = require("express");
 let i18n = require("i18n");
+let mysql = require("mysql");
+let bodyParser = require("body-parser");
+let session = require('express-session');
+let cookieParser = require("cookie-parser");
+let jsonfile = require('jsonfile');
 
 let app = express();
 let host = "localhost";
 let post = process.env.POST || 3000;
+let configData = require("./configs/connection-data.js");
+let pool = mysql.createPool(configData.dataonline);
 
 app.set("view engine", "jade");
 app.set("views", __dirname + "/views");
 app.use(express.static(__dirname + "/public"))
+app.set('trust proxy', 1) // trust first proxy
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(session({
+  secret: 'Session module',
+  resave: false,
+  saveUninitialized: true
+}));
 
 i18n.configure({
     /**
@@ -78,4 +94,8 @@ app.listen(post, function(){
 
 app.get("/", function(req, res, next){
     res.render("home");
+});
+
+app.get("/add", function(req, res, next){
+    res.render("thanhvien/signup");
 });
