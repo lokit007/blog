@@ -1,0 +1,11 @@
+doctype html
+html
+    head
+        title Quản lý file
+    body
+        h1 Quản lý file
+        hr
+        for file in data
+            img(src="./uploads/" + file)
+        else
+            p Không có dữ liệu

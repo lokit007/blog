@@ -92,6 +92,7 @@ app.listen(post, function(){
     console.log("Server : http://localhost:%d", post);
 });
 
+// Add routes
 app.get("/", function(req, res, next){
     res.render("home");
 });
@@ -99,3 +100,6 @@ app.get("/", function(req, res, next){
 app.get("/add", function(req, res, next){
     res.render("thanhvien/signup");
 });
+
+require("./routes/filemanager.js")(app, pool);
+require("./routes/thanhvien.js")(app, pool);
