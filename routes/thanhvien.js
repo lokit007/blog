@@ -1,14 +1,14 @@
 let Db = require("../models/database.js");
-let multer  = require('multer')
+let multer  = require('multer');
 let storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './uploads')
+    cb(null, './public/uploads')
   },
   filename: function (req, file, cb) {
     cb(null, req.body.username + '_' + file.fieldname + "." + file.originalname.substr(file.originalname.lastIndexOf(".")+1))
   }
-})
-let upload = multer({ storage: storage })
+});
+let upload = multer({ storage: storage });
 
 module.exports = (app, pool) => {
 	

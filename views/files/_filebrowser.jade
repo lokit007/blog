@@ -1,11 +1,60 @@
 doctype html
 html
-    head
-        title Quản lý file
-    body
-        h1 Quản lý file
-        hr
-        for file in data
-            img(src="./uploads/" + file)
-        else
-            p Không có dữ liệu
+	head
+		title Quản lý file
+		script(src="js/jquery-3.1.1.min.js")
+		style.
+			div#item-file {
+				float: left;
+				width: 150px;
+				height: 170px;
+				overflow: hidden;
+				text-align: center;
+				margin: 10px;
+			}
+			div#content #item-file img:hover {
+				transform: scale(1.1);
+			}
+			div#content #item-file img {
+				max-width: 90%;
+				height: 75%;
+				border: 2px solid gray;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: all 0.3s;
+				display: block;
+				margin: auto;
+				margin-bottom: 10px;
+			}
+			img.select {
+				border: 2px solid green !important;
+			}
+		script.
+			function getUrlParam(paramName) {
+				var reParam = new RegExp('(?:[\?&]|&)' + paramName + '=([^&]+)', 'i');
+				var match = window.location.search.match( reParam );
+				return ( match && match.length > 1 ) ? match[1] : null;
+			}
+			function viewimage(e) {
+				$(".select").attr("class", "");
+				$(e).attr("class", "select");
+			}
+			function selectfile(e) {
+				window.opener.CKEDITOR.tools.callFunction(getUrlParam('CKEditorFuncNum'), $(e).attr("src"));
+				window.close();
+			}
+			function btnSelectfile() {
+				window.opener.CKEDITOR.tools.callFunction(getUrlParam('CKEditorFuncNum'), $(".select").attr("src"));
+				window.close();
+			}
+	body
+		button(onclick="btnSelectfile();") Thêm hình ảnh này vào khung hình
+		hr
+		#content
+			for file in data
+				if /\.(gif|jpg|jpeg|tiff|png)$/i.test(file)
+					#item-file
+						img(src="uploads/" + file, onclick="viewimage(this);", ondblclick="selectfile(this);")
+						span= file
+			else
+				p Không có dữ liệu
