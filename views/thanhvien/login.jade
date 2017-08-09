@@ -1,0 +1,32 @@
+extends ../template
+
+block content
+    #content
+        form#login(action="/login", method="POST")
+            if data 
+                .alert.alert-danger.alert-dismissable(role="alert")
+                    button(type="button", data-dismiss="alert").close
+                        span(aria-hidden="true") &times;
+                        span.sr-only Close
+                    strong Lỗi!    
+                    i= data
+
+            label Tài khoản
+                span.notnull (*)
+            input(type="text", name="username", placeholder="Nhập ở đây ...")#username.form-control
+            label Mật khẩu 
+                span.notnull (*)
+            input(type="password", name="password", placeholder="Nhập ở đây ...")#password.form-control
+            button(type="submit").btn.btn-primary.btn-block Đăng nhập
+            #addlogin
+                .fb-login-button(data-max-rows="1", data-size="medium", data-width="300px", data-button-type="continue_with", data-show-faces="true", data-auto-logout-link="false", data-use-continue-as="true")
+block footer
+    #fb-root
+    script.
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.10&appId=390168204513449";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
