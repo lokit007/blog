@@ -3,6 +3,17 @@ extends template
 block content
     h1 Chao mung den Node
     hr
+    button(onclick="$('.alert').alert()")#message Show messages
+    - var data = "Indicates a dangerous or potentially negative action."
+    br 
+    br  
+    #myAlert.alert.alert-danger.alert-dismissable(role="alert")
+        button(type="button", data-dismiss="alert").close
+            span(aria-hidden="true") &times;
+            span.sr-only Close
+        strong Lỗi!    
+        i= data
+    hr
     textarea(name="editor1")
     br
 block footer
@@ -67,3 +78,7 @@ block footer
             }
         } );
         CKEDITOR.replace( 'editor1', { extraPlugins: 'myplugin' } );
+
+        $("#myAlert").on('close.bs.alert', function(){
+            alert('The alert message is about to be closed.');
+        });

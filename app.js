@@ -85,6 +85,7 @@ app.use(function(req, res, next){
     }
     res.locals.clanguage = req.getLocale();
     res.locals.languages = i18n.getLocales();
+    res.locals.session = req.session;
     next();
 });
 
@@ -97,8 +98,8 @@ app.get("/", function(req, res, next){
     res.render("home");
 });
 
-app.get("/add", function(req, res, next){
-    res.render("thanhvien/signup");
+app.get("/demo", function(req, res, next){
+    res.render("htmldemo");
 });
 
 require("./routes/filemanager.js")(app, pool);

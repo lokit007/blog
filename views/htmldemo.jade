@@ -1,0 +1,163 @@
+doctype html
+html
+    head
+        title= data || "Html demo"
+        meta(charset="utf8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        base(href="http://localhost:3000")
+        link(rel="icon", href="images/icons/favicon.ico", type="image/x-icon")
+        link(href="css/bootstrap.min.css", rel="stylesheet")
+        link(href="css/bootstrap.min.css", rel="stylesheet")
+        link(href="font-awesome/css/font-awesome.min.css", rel="stylesheet")
+        script(src="js/jquery-3.1.1.min.js")
+        script(src="js/jquery.validate.min.js")
+        script(src="js/bootstrap.min.js")
+        script(src="js/eModal.min.js")
+        script(src="ckeditor/ckeditor.js")
+        style.
+            /* Note: Try to remove the following lines to see the effect of CSS positioning */
+            .affix {
+                top: 0;
+                width: 100%;
+            }
+
+            .affix + .container-fluid {
+                padding-top: 70px;
+            }
+    body(data-spy="scroll", data-target="#myScrollspy", data-offset="150")
+        .container-fluid(style="background-color:#F44336;color:#fff;height:200px;")
+            h1 Bootstrap Affix Example
+            h3 Fixed (sticky) navbar on scroll
+            p Scroll this page to see how the navbar behaves with data-spy="affix".
+            p The navbar is attached to the top of the page after you have scrolled a specified amount of pixels.
+
+        nav#myScrollspy.navbar.navbar-inverse(data-spy="affix" data-offset-top="197")
+            ul.nav.navbar-nav
+                li.active
+                    a(href="#") Basic Topnav
+                li: a(href="#section1") Page 1
+                li: a(href="#section2") Page 2
+                li: a(href="#section3") Page 3
+                li: a(href="#section4") Page 4
+
+        
+        
+        
+        
+        
+        
+        #demo
+            a(href="#", data-trigger="focus", data-toggle="popover", title="Popover Header", data-content="Some content inside the popover") Toggle popover
+            br
+            a(href="#", data-toggle="tooltip", title="Hooray!") Hover over me
+            script.
+                $(document).ready(function(){
+                    $('[data-toggle="popover"]').popover(); 
+                    $('[data-toggle="tooltip"]').tooltip();
+                });
+            br
+            - var data = "Indicates a dangerous or potentially negative action."
+            br 
+            br  
+            #myAlert.alert.alert-danger.alert-dismissable(role="alert")
+                button(type="button", data-dismiss="alert").close
+                    span(aria-hidden="true") &times;
+                    span.sr-only Close
+                strong Lỗi!    
+                i= data
+            hr
+            script.
+                $("#myAlert").on('close.bs.alert', function(){
+                    alert('The alert message is about to be closed.');
+                });
+
+            
+            
+            #alert-autohide(style="display:none;")
+                #title-alert
+                    i#title Tiêu đề
+                    span(aria-hidden="true", onclick="hidealert();") &times;
+                #content-alert Nội dung
+            button(onclick="showalert('Tiêu đề này', 'Nội dung này', 3000);") Show alert messages
+            style.
+                div#alert-autohide {
+                    position: fixed;
+                    background-color: lightgreen;
+                    color: darkblue;
+                    border-radius: 5px;
+                    min-width: 200px;
+                    bottom: 5px;
+                    right: 5px;
+                    border: 2px solid gray;
+                }
+                div#alert-autohide #title-alert {
+                    font-weight: bold;
+                    border-bottom: 1px solid gray;
+                    padding: 5px;
+                }
+                div#alert-autohide #title-alert span {
+                    float: right;
+                    cursor: pointer;
+                }
+                #content-alert {
+                    padding: 5px;
+                }
+            script.
+                function hidealert(){
+                    $("#alert-autohide").hide(500);
+                }
+                function showalert(title, content, delay){
+                    $("#title").text(title);
+                    $("#content-alert").html(content);
+                    $("#alert-autohide").show(500);
+                    setTimeout(hidealert, delay);
+                }
+        #section1.container-fluid(style="height:500px;")
+            h1 Ckeditor
+            textarea(name="editor1")
+            script.
+                CKEDITOR.replace('editor1');
+                
+        #section2.container-fluid(style="height:500px;")
+            h1 Session
+            if session.user
+                p= session.user.name
+                p= session.user.key
+                p= session.user.icon
+                p= session.user.auto
+            else
+                p Không có session
+            p Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!
+            p Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!
+            br
+            .btn-group
+                #user(data-toggle="dropdown")
+                    img(src="http://via.placeholder.com/350x150")
+                    | Lokit007
+                    span.caret
+                ul(class="dropdown-menu", role="menu")
+                    li: a(href="#") Action
+                    li: a(href="#") Another action
+                    li: a(href="#") Something else here
+                    li.divider
+                    li: a(href="#") Separated link
+                style.
+                    div#user img {
+                        width: 30px;
+                        height: 30px;
+                        margin-right: 5px;
+                    }
+                    div#user span {
+                        margin-left: 5px;
+                    }
+
+        #section3.container-fluid(style="height:500px;")
+            h1 Section 3
+            p Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!
+            p Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!
+
+        
+        #section4.container-fluid(style="height:500px;")
+            h1 Section 4
+            p Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!
+            p Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!

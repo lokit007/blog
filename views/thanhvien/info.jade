@@ -1,11 +1,15 @@
-doctype html
-head
-    title Demo html
-body
-    #data= data
-    //- Hiển thị html
-    #data2!= data
+extends ../template
 
-    #data3 #{data}
-    //- Hiển thị html
-    #data4 !{data}
+block content
+    #content
+        #icon-user
+            img(src="uploads/#{ data.icon}")
+        #info-user
+            label= data.name
+            label= data.fulname
+            label= data.job
+            label= data.email
+            label= data.phone
+        #info!= data.info
+block footer
+    

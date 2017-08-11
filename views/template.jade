@@ -35,3 +35,8 @@ html(lang="#{ clanguage }")
             span.fa-stack.fa-lg
                 i.fa.fa-square-o.fa-stack-2x
                 i.fa.fa-hand-o-up.fa-stack-1x
+        #alert-autohide(style="display:none;")
+            #title-alert
+                i#title Tiêu đề
+                span(aria-hidden="true", onclick="hidealert();") &times;
+            #content-alert Nội dung

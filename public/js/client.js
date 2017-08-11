@@ -8,7 +8,15 @@ window.onscroll = function(){
         $("#backtop").hide();
     }
 }
-
+function hidealert(){
+    $("#alert-autohide").hide(500);
+}
+function showalert(title, content, delay){
+    $("#title").text(title);
+    $("#content-alert").html(content);
+    $("#alert-autohide").show(500);
+    setTimeout(hidealert, delay);
+}
 $(document).ready(function(){ 	
 	$("#backtop").click(function () {
 		$('body,html').animate({

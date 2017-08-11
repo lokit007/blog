@@ -23,6 +23,13 @@ module.exports = (app, pool) => {
 			db.getData(sql, [req.body.username, req.body.password])
 			.then((data) => {
 				if(data.length > 0) {
+					var user = {
+						name: data[0].UserName,
+						key: data[0].PassWord,
+						auto: false,
+						icon: data[0].Icon
+					};
+					req.session.user = user;
 					res.redirect("/");
 				} else res.render("thanhvien/login", {data : "Tên đăng nhập hoặc mật khẩu không chính xác!"});
 			})
@@ -34,6 +41,11 @@ module.exports = (app, pool) => {
 			console.log("thanhvien.js line 42 : " + error);
 			res.render("thanhvien/login", {data : "Tên đăng nhập hoặc mật khẩu không chính xác!"});
 		}
+	});
+
+	app.get("/logout", (req, res, next) => {
+			req.session.user = undefined;
+			res.redirect("/");
 	});
 
 	app.get("/signup", (req, res, next) => {
@@ -91,6 +103,59 @@ module.exports = (app, pool) => {
 		} catch (error) {
 			console.log(error);
 			res.render("thanhvien/signup", {data: "Lỗi cập nhật dữ liệu! Nhấn F5 để tải lại trang và tiếp tục"});
+		}
+	});
+
+	app.get("/info/:user", (req, res, next) => {
+		let db = new Db(pool);
+		let sql = "select * from thanhvien where UserName = N? limit 1";
+
+		try {
+			let userinfo = req.params.user;
+			if(userinfo != undefined) {
+				db.getData(sql, [userinfo])
+				.then((data) => {
+					if(data.length > 0) {
+						let objresult = {
+							name : data[0].UserName,
+							fullname : data[0].HoTen,
+							icon : data[0].Icon,
+							birthday : data[0].SinhNhat,
+							create : data[0].NgayThamGia,
+							job : data[0].NgheNghiep,
+							email : data[0].Email,
+							phone : data[0].DienThoai,
+							info : data[0].BanThan,
+							cv : data[0].FileCV
+						};
+						console.log(objresult);
+						res.render("thanhvien/info", {data: objresult});
+					} else res.send("Chưa đăng nhập");
+				})
+				.catch((err) => {
+					console.log("thanhvien.js line 125 : " + err);
+					res.send("Chưa đăng nhập");
+				});
+			} else res.send("Chưa đăng nhập");
+		} catch (error) {
+			console.log("thanhvien.js line 130 : " + error);
+			res.send("Lỗi : " + error);
+		}
+	});
+
+	app.get("/share/:user", (req, res, next) => {
+		let db = new Db(pool);
+		let sql = "select * from thanhvien where UserName = N? and PassWord = ? limit 1";
+
+		try {
+			let userinfo = req.params.user;
+			let user = req.session.user;
+
+			if(userinfo = user.name && user != undefined) {
+
+			} else res.send("Chưa đăng nhập");
+		} catch (error) {
+			res.send("Lỗi : " + error);
 		}
 	});
 

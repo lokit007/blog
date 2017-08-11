@@ -37,6 +37,29 @@ label.error {
 input.error {
     border: 1px solid red;
 }
+div#alert-autohide {
+    position: fixed;
+    background-color: lightgreen;
+    color: darkblue;
+    border-radius: 5px;
+    min-width: 200px;
+    max-width: 320px;
+    bottom: 5px;
+    right: 5px;
+    border: 2px solid gray;
+}
+div#alert-autohide #title-alert {
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+    padding: 5px;
+}
+div#alert-autohide #title-alert span {
+    float: right;
+    cursor: pointer;
+}
+#content-alert {
+    padding: 5px;
+}
 div#div-logo {
     float: left;
     margin-right: 5%;
@@ -79,11 +102,9 @@ li.active {
     font-weight: bold;
     text-shadow: 1px 1px 1px;
 }
-ul.nav.navbar-nav li:hover {
-    border-bottom: 3px solid red;
+ ul.nav.navbar-nav li:hover {
     font-weight: bold;
-    height: 50px;
-}
+} 
 nav.navfix {
     width: 100%;
     position: fixed;
@@ -135,4 +156,16 @@ form#login {
 div#addlogin {
     margin-top: 20px;
     text-align: center;
+}
+div#user {
+    padding: 10px;
+    cursor: pointer;
+}
+div#user img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+div#user span {
+    margin-left: 5px;
 }

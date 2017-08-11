@@ -11,9 +11,21 @@
                 button(class="btn btn-default", type="submit")
                     i.glyphicon.glyphicon-search
     ul.nav.navbar-nav.navbar-right
-        li: a(href="/signup")
-            span.glyphicon.glyphicon-user
-            |  #{ __("menu-signup") }
-        li: a(href="/login")
-            span.glyphicon.glyphicon-log-in
-            |  #{ __("menu-login") }
+        if session.user
+            li: .btn-group
+                #user(data-toggle="dropdown")
+                    img(src="uploads/#{ session.user.icon }")
+                    | #{ session.user.name }
+                    span.caret
+                ul(class="dropdown-menu", role="menu")
+                    li: a(href="/info/#{ session.user.name }") Thông tin cá nhân
+                    li: a(href="/share/#{ session.user.name }") Chia sẻ cộng đồng
+                    li.divider
+                    li: a(href="/logout") Đăng xuất
+        else
+            li: a(href="/signup")
+                span.glyphicon.glyphicon-user
+                |  #{ __("menu-signup") }
+            li: a(href="/login")
+                span.glyphicon.glyphicon-log-in
+                |  #{ __("menu-login") }
