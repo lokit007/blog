@@ -3,6 +3,9 @@ extends template
 block content
     h1 Chao mung den Node
     hr
+    marquee(onmouseover="this.stop()" onmouseout="this.start()" scrollamount="7") Dòng chữ chạy trên màn hình, khi hover chuột thì dừng 
+        a(href="#") click me
+    hr
     button(onclick="$('.alert').alert()")#message Show messages
     - var data = "Indicates a dangerous or potentially negative action."
     br 

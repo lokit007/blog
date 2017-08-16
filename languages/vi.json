@@ -8,7 +8,16 @@
 	"menu-signup": " Đăng ký",
 	"menu-login": " Đăng nhập",
 	"menu-logout": " Đăng xuất",
+	"input-here": "Nhập ở đây ...",
 	"login-error-user-pass": "Tên đăng nhập hoặc mật khẩu không chính xác!",
 	"login-error-database": "Lỗi cập nhật dữ liệu! Nhấn F5 để tải lại trang và tiếp tục",
-	"#{ lg }": "#{ lg }"
+	"login-success-title": "Đăng nhập thành công!",
+	"login-success-content": "Chào mừng bạn đến với cổng chia sẻ kiến thức NhanViet!",
+	"signup-success-title": "Đăng ký thành công!",
+	"signup-success-content": "Chào mừng bạn đến với cổng chia sẻ kiến thức NhanViet! Vui lòng đăng nhập hệ thống để trải nghiệm nhiều hơn. Cảm ơn!!!",
+	"login-label-user": "Tài khoản",
+	"login-label-pass": "Mật khẩu",
+	"login-button-login": "Đăng nhập hệ thống",
+	"login-reset-pass": "Quên mật khẩu",
+	"login-signup": "Đăng ký thành viên mới"
 }

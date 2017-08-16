@@ -85,6 +85,7 @@ app.use(function(req, res, next){
     }
     res.locals.clanguage = req.getLocale();
     res.locals.languages = i18n.getLocales();
+    req.session.mes = null;
     res.locals.session = req.session;
     next();
 });
@@ -95,6 +96,11 @@ app.listen(post, function(){
 
 // Add routes
 app.get("/", function(req, res, next){
+    req.session.mes = {
+		type: "success",
+		title: __("login-success-title"),
+		message: __("login-success-content")
+	}
     res.render("home");
 });
 

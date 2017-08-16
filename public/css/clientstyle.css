@@ -98,6 +98,9 @@ div#div-language ul li a img {
     float: right;
     margin-top: -1px;
 }
+div#div-error {
+    min-height: 300px;
+}
 nav.navbar {
     border: 3px solid gray;
     margin-top: 15px;

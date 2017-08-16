@@ -1,6 +1,7 @@
 doctype html
 html(lang="#{ clanguage }")
     head
+        block head1
         title #{ __("title-web") }
         meta(charset="utf8")
         meta(name="viewport", content="width=device-width, initial-scale=1")
@@ -47,3 +48,6 @@ html(lang="#{ clanguage }")
                 i#title Tiêu đề
                 span(aria-hidden="true", onclick="hidealert();") &times;
             #content-alert Nội dung
+        if session.mes
+            script.
+                showalert("#{ session.mes.title}", "#{ session.mes.message }", 7000);

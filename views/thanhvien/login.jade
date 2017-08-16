@@ -11,15 +11,19 @@ block content
                     strong Lỗi!    
                     i= data
 
-            label Tài khoản
+            label #{ __("login-label-user") }
                 span.notnull (*)
-            input(type="text", name="username", placeholder="Nhập ở đây ...")#username.form-control
-            label Mật khẩu 
+            input(type="text", name="username", placeholder="#{ __('input-here') }")#username.form-control
+            label #{ __("login-label-pass") } 
                 span.notnull (*)
-            input(type="password", name="password", placeholder="Nhập ở đây ...")#password.form-control
-            button(type="submit").btn.btn-primary.btn-block Đăng nhập
+            input(type="password", name="password", placeholder="#{ __('input-here') }")#password.form-control
+            button(type="submit").btn.btn-primary.btn-block #{ __("login-button-login") }
             #addlogin
                 .fb-login-button(data-max-rows="1", data-size="medium", data-width="300px", data-button-type="continue_with", data-show-faces="true", data-auto-logout-link="false", data-use-continue-as="true")
+            #helplogin
+                a.a-left(href="resetpass") #{ __("login-reset-pass") }
+                br
+                a.a-right(href="signup") #{ __("login-signup") }
 block footer
     #fb-root
     script.

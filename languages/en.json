@@ -8,5 +8,13 @@
 	"menu-signup": " Đăng ký",
 	"menu-login": " Đăng nhập",
 	"menu-logout": " Đăng xuất",
-	"#{ lg }": "#{ lg }"
+	"#{ lg }": "#{ lg }",
+	"login-success-title": "login-success-title",
+	"login-success-content": "login-success-content",
+	"login-label-user": "login-label-user",
+	"input-here": "input-here",
+	"login-label-pass": "login-label-pass",
+	"login-button-login": "login-button-login",
+	"login-reset-pass": "login-reset-pass",
+	"login-signup": "login-signup"
 }

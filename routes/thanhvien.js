@@ -32,6 +32,11 @@ module.exports = (app, pool) => {
 						icon: data[0].Icon
 					};
 					req.session.user = user;
+					req.session.mes = {
+						type: "success",
+						title: __("login-success-title"),
+						message: __("login-success-content")
+					}
 					res.redirect("/");
 				} else res.render("thanhvien/login", {data : __("login-error-user-pass")});
 			})
@@ -76,7 +81,14 @@ module.exports = (app, pool) => {
                 if(errComit) connection.rollback(function(){
                   res.render("thanhvien/signup", {data: __("login-error-database")});
                 });
-                else res.redirect('/login');
+                else {
+									req.session.mes = {
+										type: "success",
+										title: __("signup-success-title"),
+										message: __("signup-success-content")
+									}
+									res.redirect('/login');
+								}
               });
             })
             .catch(error => {
@@ -104,16 +116,18 @@ module.exports = (app, pool) => {
 					if(data.length > 0) {
 						let objresult = ThanhVien.getDataResult(data[0]);
 						res.render("thanhvien/info", {data: objresult});
-					} else res.send("Chưa đăng nhập");
+					} else {
+						res.render("404", {data: "Thành viên không tồn tại trong hệ thống!!!"});
+					}
 				})
 				.catch((err) => {
 					console.log("thanhvien.js line 125 : " + err);
-					res.send("Chưa đăng nhập");
+					res.render("404", {data: "Thành viên không tồn tại trong hệ thống!!!"});
 				});
-			} else res.send("Chưa đăng nhập");
+			} else res.render("404", {data: "Thành viên không tồn tại trong hệ thống!!!"});
 		} catch (error) {
 			console.log("thanhvien.js line 130 : " + error);
-			res.send("Lỗi : " + error);
+			res.render("404", {data: "Thành viên không tồn tại trong hệ thống!!!"});
 		}
 	});
 
