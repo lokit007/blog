@@ -19,6 +19,7 @@ module.exports.getSqlInsert = function() {
 };
 // object insert
 module.exports.getObjInsert = function(username, password, fullname, urlIcon, birthday, email, phone, job, info, urlCv) {
+	let date = new Date();
     let objResult = {
 	    UserName : username,
 		PassWord : password,
@@ -32,10 +33,10 @@ module.exports.getObjInsert = function(username, password, fullname, urlIcon, bi
 		FileCV : urlCv,
 		LoaiThanhVien : "Thường",
 		TrangThaiTruyCap : 1,
-		NgayThamGia : "20170809"
+		NgayThamGia : date.toISOString().replace(/T/, " ").replace(/\..+/, "")
     }
     return objResult;
-}
+};
 // fill data
 module.exports.getDataResult = function(data) {
     let objResult = new ThanhVien();

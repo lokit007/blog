@@ -33,15 +33,15 @@ module.exports = (app, pool) => {
 					};
 					req.session.user = user;
 					res.redirect("/");
-				} else res.render("thanhvien/login", {data : "Tên đăng nhập hoặc mật khẩu không chính xác!"});
+				} else res.render("thanhvien/login", {data : __("login-error-user-pass")});
 			})
 			.catch((err) => {
 				console.log("thanhvien.js line 38 : " + err);
-				res.render("thanhvien/login", {data : "Tên đăng nhập hoặc mật khẩu không chính xác!"});
+				res.render("thanhvien/login", {data : __("login-error-user-pass")});
 			});
 		} catch(error) {
 			console.log("thanhvien.js line 42 : " + error);
-			res.render("thanhvien/login", {data : "Tên đăng nhập hoặc mật khẩu không chính xác!"});
+			res.render("thanhvien/login", {data : __("login-error-user-pass")});
 		}
 	});
 
@@ -69,26 +69,26 @@ module.exports = (app, pool) => {
 			obj = ThanhVien.getObjInsert(req.body.username, req.body.password, req.body.fullname, urlIcon, req.body.birthday, req.body.email, req.body.phone, req.body.job, req.body.info, urlCv);
 			pool.getConnection(function(err, connection) {
         connection.beginTransaction(function(errTran){
-          if(errTran) res.render("thanhvien/signup", {data: "Lỗi cập nhật dữ liệu! Nhấn F5 để tải lại trang và tiếp tục"});
+          if(errTran) res.render("thanhvien/signup", {data: __("login-error-database")});
           else objDb.executeQuery(sql, obj, connection)
             .then(results => {
               connection.commit(function(errComit){
                 if(errComit) connection.rollback(function(){
-                  res.render("thanhvien/signup", {data: "Lỗi cập nhật dữ liệu! Nhấn F5 để tải lại trang và tiếp tục"});
+                  res.render("thanhvien/signup", {data: __("login-error-database")});
                 });
                 else res.redirect('/login');
               });
             })
             .catch(error => {
               connection.rollback(function(){
-                res.render("thanhvien/signup", {data: "Lỗi cập nhật dữ liệu! Nhấn F5 để tải lại trang và tiếp tục"});
+                res.render("thanhvien/signup", {data: __("login-error-database")});
               });
             });
         });
       });
 		} catch (error) {
 			console.log(error);
-			res.render("thanhvien/signup", {data: "Lỗi cập nhật dữ liệu! Nhấn F5 để tải lại trang và tiếp tục"});
+			res.render("thanhvien/signup", {data: __("login-error-database")});
 		}
 	});
 
@@ -103,7 +103,6 @@ module.exports = (app, pool) => {
 				.then((data) => {
 					if(data.length > 0) {
 						let objresult = ThanhVien.getDataResult(data[0]);
-						console.log(objresult);
 						res.render("thanhvien/info", {data: objresult});
 					} else res.send("Chưa đăng nhập");
 				})

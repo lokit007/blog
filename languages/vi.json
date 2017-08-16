@@ -1,9 +1,14 @@
 {
+	"vi": "Tiếng Việt",
+	"en": "Tiếng Anh",
 	"title-web": "Chào mừng Web Demo",
 	"title-page": "Chia sẻ kiến thức để cùng nhau tiến bộ",
 	"decscription-page": "Kênh chia sẻ kiến thức về lĩnh vực công nghệ, đời sống, ...<br> Nơi mà các bạn có thể tìm kiếm các kiến thức bổ trợ trong lập trình, cũng như chia sẻ các kinh nghiệm quý báu của mình cho thế hệ mai sau.",
 	"menu-home": "Trang chủ",
 	"menu-signup": " Đăng ký",
 	"menu-login": " Đăng nhập",
-	"menu-logout": " Đăng xuất"
+	"menu-logout": " Đăng xuất",
+	"login-error-user-pass": "Tên đăng nhập hoặc mật khẩu không chính xác!",
+	"login-error-database": "Lỗi cập nhật dữ liệu! Nhấn F5 để tải lại trang và tiếp tục",
+	"#{ lg }": "#{ lg }"
 }

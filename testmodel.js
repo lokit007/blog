@@ -31,3 +31,6 @@ console.log(obj);
 console.log(obj.name);
 console.log(obj.getInfo());
 console.log(Model1);
+
+let date = new Date();
+console.log(date.toISOString().replace(/T/, " ").replace(/\..+/, ""));

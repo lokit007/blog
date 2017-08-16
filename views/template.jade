@@ -23,6 +23,13 @@ html(lang="#{ clanguage }")
             #div-solo
                 h1 #{ __("title-page") }
                 p #{ __("decscription-page") }
+            #div-language.btn-group
+                img(src="images/icons/#{ clanguage }.png", data-toggle="dropdown")
+                ul(class="dropdown-menu dropdown-menu-right", role="menu")
+                    for lg in languages
+                        li
+                            a(href="?lang=#{ lg }") #{ __(lg) }
+                                img(src="images/icons/#{ lg }.png")
             .clear
         .container
             nav#menubar.navbar: include files/_menu
