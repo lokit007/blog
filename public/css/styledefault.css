@@ -1,0 +1,84 @@
+body {
+    background: url(../images/furley_bg.png) center;
+}
+.clear {
+    clear: both;
+}
+/* Style Error */
+label.error {
+    color: red;
+    margin-left: 10px;
+}
+input.error {
+    border-color: red;
+}
+header {
+    min-height: 150px;
+    border: 1px solid;
+    margin-bottom: 2px;
+}
+nav {
+    min-height: 50px;
+    border: 1px solid;
+    margin-bottom: 2px;
+}
+article {
+    min-height: 500px;
+    width: 75%;
+    border: 1px solid;
+    margin-bottom: 2px;
+    float: left;
+}
+aside {
+    width: 25%;
+    float: right;
+    border: 1px solid;
+    margin-bottom: 2px;
+    min-height: 500px;
+}
+footer {
+    clear: both;
+    border: 1px solid;
+}
+/* header */
+header #div-logo img {
+    max-width: 12%;
+    float: left;
+    margin-right: 1%;
+}
+header #div-solo {
+    float: left;
+    max-width: 87%;
+}
+header #div-language {
+    position: absolute;
+    right: 10px;
+}
+header #div-language img {
+    width: 50px;
+}
+header #div-language ul li a img {
+    max-width: 21px;
+    float: right;
+}
+div#div-solo h1 {
+    color: red;
+    font-weight: 600;
+    text-shadow: 3px 2px 1px grey;
+}
+div#div-solo p {
+    font-weight: 600;
+    color: gray;
+    font-style: italic;
+}
+/* Menu */
+.affix {
+    top: 0;
+    width: 100%;
+}
+.affix + .container-fluid {
+    padding-top: 70px;
+}
+#search-phone {
+    display: none;
+}

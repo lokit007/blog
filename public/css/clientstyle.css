@@ -105,9 +105,6 @@ nav.navbar {
     border: 3px solid gray;
     margin-top: 15px;
 }
-form.navbar-form.navbar-left div.input-group input {
-    width: 300px;
-}
 li.active {
     font-weight: bold;
     border-bottom: 5px solid red;

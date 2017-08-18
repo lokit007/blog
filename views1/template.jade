@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+html(lang="#{ clanguage }")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		block head-before
+		title= title || "Template demo"
+		base(href="http://localhost:3000")
+		link(rel="icon", href="images/icons/favicon.ico", type="image/x-icon")
+		link(href="css/bootstrap.min.css", rel="stylesheet")
+		link(href="css/bootstrap.min.css", rel="stylesheet")
+		link(href="css/styledefault.css", rel="stylesheet")
+		link(media="(min-width: 981px)", href="css/stylelaptop.css", rel="stylesheet")
+		link(media="(min-width: 600px) and (max-width: 980px)", href="css/styletablet.css", rel="stylesheet")
+		link(media="(max-width: 599px)", href="css/stylephone.css", rel="stylesheet")
+		link(href="font-awesome/css/font-awesome.min.css", rel="stylesheet")
+		script(src="js/jquery-3.1.1.min.js")
+		script(src="js/jquery.validate.min.js")
+		script(src="js/bootstrap.min.js")
+		script(src="js/eModal.min.js")
+		script(src="js/client.js")
+		script(src="ckeditor/ckeditor.js")
+		block head-after
+	body
+		header
+			#div-logo: img(src="images/logo.png")
+			#div-solo
+				h1 #{ __("title-page") }
+				p !{ __("decscription-page") }
+			#div-language.btn-group
+				img(src="images/icons/#{ clanguage }.png", data-toggle="dropdown")
+				ul(class="dropdown-menu dropdown-menu-right", role="menu")
+					for lg in languages
+						li: a(href="?lang=#{ lg }") #{ __(lg) }
+							img(src="images/icons/#{ lg }.png")
+			.clear
+		nav.navbar.navbar-default(data-spy="affix" data-offset-top="197")
+			include files/_menu
+		article
+			block content
+		aside
+			p aside
+		footer
+			block footer

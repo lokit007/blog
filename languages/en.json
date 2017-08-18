@@ -17,5 +17,18 @@
 	"login-button-login": "login-button-login",
 	"login-reset-pass": "login-reset-pass",
 	"login-signup": "login-signup",
-	"ja": "ja"
+	"signup-label-user": "signup-label-user",
+	"signup-label-pass": "signup-label-pass",
+	"signup-label-fullname": "signup-label-fullname",
+	"signup-label-icon": "signup-label-icon",
+	"signup-label-birthday": "signup-label-birthday",
+	"signup-label-email": "signup-label-email",
+	"signup-label-phone": "signup-label-phone",
+	"signup-label-job": "signup-label-job",
+	"signup-label-info": "signup-label-info",
+	"signup-label-cv": "signup-label-cv",
+	"update-label-change-pass": "update-label-change-pass",
+	"update-button-change-pass": "update-button-change-pass",
+	"update-label-change-info": "update-label-change-info",
+	"update-button-change-info": "update-button-change-info"
 }

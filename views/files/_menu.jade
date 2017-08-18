@@ -1,10 +1,18 @@
 .container-fluid
     .navbar-header: a(class="navbar-brand", href="#") NHANVIET
     ul.nav.navbar-nav
-        li.active: a(href="#") #{ __("menu-home") }
-        li:  a(href="#") Giới thiệu
-        li:  a(href="#") Chia sẻ
-        li:  a(href="#") Thông tin
+        li.active: a(href="#") 
+            i.fa.fa-shopping-basket
+            |  Cửa hàng
+        li:  a(href="#")
+            i.fa.fa-share-alt-square
+            |  Đăng bài
+        li:  a(href="#")
+            i.fa.fa-modx
+            |  Nhiều hơn
+        li:  a(href="/update")
+            i.fa.fa-question-circle
+            |  Thông tin
         form.navbar-form.navbar-left: .input-group
             input(type="text", class="form-control", placeholder="Search ...")
             .input-group-btn

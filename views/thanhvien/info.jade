@@ -3,13 +3,30 @@ extends ../template
 block content
     #content
         #icon-user
-            img(src="uploads/#{ data.icon}")
+            img(src="uploads/#{ data.icon}").img-thumbnail
         #info-user
             label= data.name
-            label= data.fulname
+            label= data.fullname
             label= data.job
-            label= data.email
-            label= data.phone
+            label: a(href="mailto:#{ data.email }")= data.email
+            - var phone = data.phone
+            - if(phone.length>9) phone = "0" + phone.substr(0, 3) + "." + phone.substr(3, 4) + "." + phone.substr(7, 3)
+            - else phone = "0" + phone.substr(0, 3) + "." + phone.substr(3, 3) + "." + phone.substr(6, 3)
+            label: a(href="tel:+84#{ data.phone }")= phone
+            if data.cv
+                a(href="uploads/#{ data.cv}", download="").btn.btn-sm.btn-primary 
+                    i(aria-hidden="true").fa.fa-download
+                    |  Tải CV
+            button(type="button").btn.btn-sm.btn-success 
+                i(aria-hidden="true").fa.fa-diamond
+                |  Tặng quà
+            button(type="button").btn.btn-sm.btn-info 
+                i(aria-hidden="true").fa.fa-users
+                |  Thêm bạn
+            button(type="button").btn.btn-sm.btn-warning 
+                i(aria-hidden="true").fa.fa-exclamation-triangle
+                |  Thông tin không đúng sự thật
+        .clear
         #info!= data.info
 block footer
     

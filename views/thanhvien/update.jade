@@ -1,0 +1,45 @@
+extends ../template
+
+block content
+	#content
+		if data
+			.alert.alert-danger.alert-dismissable(role="alert")
+				button(type="button", data-dismiss="alert").close
+					span(aria-hidden="true") &times;
+					span.sr-only Close
+				strong #{ __("error") }
+				i= data
+		h2= session.user || "Cập nhật thông tin cá nhân"
+		form#changepass(action="/update", method="PUT")
+			h3 #{ __("update-label-change-pass") }
+			label #{ __("login-label-pass") }
+				span.notnull (*)
+			input(type="password", name="password", placeholder="#{ __('input-here') }")#password.form-control
+			label #{ __("signup-label-pass") }
+			input(type="password", name="review", placeholder="#{ __('input-here') }").form-control
+			button(type="submit").btn.btn-primary.btn-block #{ __("update-button-change-pass") }
+
+		form#update(action="/update", method="PUT", enctype="multipart/form-data")
+			h3 #{ __("update-label-change-info") }
+			label #{ __("signup-label-fullname") }
+			input(type="text", name="fullname", placeholder="#{ __('input-here') }").form-control
+			label #{ __("signup-label-icon") }
+			input(type="file", name="icon").form-control
+			label #{ __("signup-label-birthday") }
+			input(type="date", name="birthday", placeholder="#{ __('input-here') }").form-control
+			label #{ __("signup-label-email") }
+			input(type="email", name="email", placeholder="#{ __('input-here') }").form-control
+			label #{ __("signup-label-phone") }
+			input(type="text", name="phone", placeholder="#{ __('input-here') }").form-control
+			label #{ __("signup-label-job") }
+			input(type="text", name="job", placeholder="#{ __('input-here') }").form-control
+			label #{ __("signup-label-info") }
+			textarea(name="info", placeholder="#{ __('input-here') }").form-control
+			label #{ __("signup-label-cv") }
+			input(type="file", name="cv").form-control
+			button(type="submit").btn.btn-primary.btn-block #{ __("update-button-change-info") }
+block footer
+	script.
+		CKEDITOR.replace('info', {
+			customConfig: 'config-min.js'
+		});

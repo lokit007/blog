@@ -104,6 +104,18 @@ module.exports = (app, pool) => {
 		}
 	});
 
+	app.get("/update", (req, res, next) => {
+		res.render("thanhvien/update");
+	});
+
+	app.put("/update", upload.any(), (req, res, next) => {
+		res.send("update ok");
+	});
+
+	app.put("/changepass", (req, res, next) => {
+		res.send("update ok");
+	});
+
 	app.get("/info/:user", (req, res, next) => {
 		let db = new Db(pool);
 		let sql = "select * from thanhvien where UserName = N? limit 1";

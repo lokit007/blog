@@ -1,0 +1,51 @@
+.container-fluid
+	.navbar-header
+		a(class="navbar-brand", href="#") NHANVIET
+		form#search-phone: .input-group
+			input(type="text", class="form-control", placeholder="Search ...")
+			.input-group-btn
+				button(class="btn btn-default", type="submit")
+					i.glyphicon.glyphicon-search
+		button(type="button", data-toggle="collapse", data-target="#navbar", aria-expanded="true", aria-controls="navbar").navbar-toggle
+			span.sr-only Toggle navigation
+			span.icon-bar
+			span.icon-bar
+			span.icon-bar
+	#navbar.navbar-collapse.collapse(aria-expanded="false")
+		ul.nav.navbar-nav
+			li.active: a(href="#")
+				i.fa.fa-shopping-basket
+				|  Cửa hàng
+			li:  a(href="#")
+				i.fa.fa-share-alt-square
+				|  Đăng bài
+			li:  a(href="#")
+				i.fa.fa-modx
+				|  Nhiều hơn
+			li:  a(href="/update")
+				i.fa.fa-question-circle
+				|  Thông tin
+			form.navbar-form.navbar-left: .input-group
+				input(type="text", class="form-control", placeholder="Search ...")
+				.input-group-btn
+					button(class="btn btn-default", type="submit")
+						i.glyphicon.glyphicon-search
+		ul.nav.navbar-nav.navbar-right
+			if session.user
+				li: .btn-group
+					#user(data-toggle="dropdown")
+						img(src="uploads/#{ session.user.icon }")
+						| #{ session.user.name }
+						span.caret
+					ul(class="dropdown-menu", role="menu")
+						li: a(href="/info/#{ session.user.name }") Thông tin cá nhân
+						li: a(href="/share/#{ session.user.name }") Chia sẻ cộng đồng
+						li.divider
+						li: a(href="/logout") #{ __("menu-logout") }
+			else
+				li: a(href="/signup")
+					span.glyphicon.glyphicon-user
+					|  #{ __("menu-signup") }
+				li: a(href="/login")
+					span.glyphicon.glyphicon-log-in
+					|  #{ __("menu-login") }

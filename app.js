@@ -8,7 +8,7 @@ let jsonfile = require('jsonfile');
 
 let app = express();
 let host = "localhost";
-let post = process.env.POST || 3000;
+let post = process.env.PORT || 3000;
 let configData = require("./configs/connection-data.js");
 let pool = mysql.createPool(configData.dataonline);
 

@@ -7,35 +7,35 @@ block content
                 button(type="button", data-dismiss="alert").close
                     span(aria-hidden="true") &times;
                     span.sr-only Close
-                strong Lỗi!    
+                strong #{ __("error") }    
                 i= data
                 
         form#signup(action="/signup", method="POST", enctype="multipart/form-data")
-            label Tài khoản đăng ký 
+            label #{ __("signup-label-user") } 
                 span.notnull (*)
-            input(type="text", name="username", placeholder="Nhập ở đây ...")#username.form-control
-            label Mật khẩu 
+            input(type="text", name="username", placeholder="#{ __('input-here') }")#username.form-control
+            label #{ __("login-label-pass") } 
                 span.notnull (*)
-            input(type="password", name="password", placeholder="Nhập ở đây ...")#password.form-control
-            label Xác nhận mật khẩu 
-            input(type="password", name="review", placeholder="Nhập ở đây ...").form-control
-            label Họ và tên
-            input(type="text", name="fullname", placeholder="Nhập ở đây ...").form-control
-            label Hình đại diện
+            input(type="password", name="password", placeholder="#{ __('input-here') }")#password.form-control
+            label #{ __("signup-label-pass") } 
+            input(type="password", name="review", placeholder="#{ __('input-here') }").form-control
+            label #{ __("signup-label-fullname") }
+            input(type="text", name="fullname", placeholder="#{ __('input-here') }").form-control
+            label #{ __("signup-label-icon") }
             input(type="file", name="icon").form-control
-            label Ngày sinh
-            input(type="date", name="birthday", placeholder="Nhập ở đây ...").form-control
-            label Email
-            input(type="email", name="email", placeholder="Nhập ở đây ...").form-control
-            label Điện thoại
-            input(type="text", name="phone", placeholder="Nhập ở đây ...").form-control
-            label Nghề nghiệp hiện tại
-            input(type="text", name="job", placeholder="Nhập ở đây ...").form-control
-            label Đôi nét bản thân
-            textarea(name="info", placeholder="Nhập ở đây ...").form-control
-            label CV đính kèm
+            label #{ __("signup-label-birthday") }
+            input(type="date", name="birthday", placeholder="#{ __('input-here') }").form-control
+            label #{ __("signup-label-email") }
+            input(type="email", name="email", placeholder="#{ __('input-here') }").form-control
+            label #{ __("signup-label-phone") }
+            input(type="text", name="phone", placeholder="#{ __('input-here') }").form-control
+            label #{ __("signup-label-job") }
+            input(type="text", name="job", placeholder="#{ __('input-here') }").form-control
+            label #{ __("signup-label-info") }
+            textarea(name="info", placeholder="#{ __('input-here') }").form-control
+            label #{ __("signup-label-cv") }
             input(type="file", name="cv").form-control
-            button(type="submit").btn.btn-primary.btn-block Đăng ký
+            button(type="submit").btn.btn-primary.btn-block #{ __("menu-signup") }
 
 block footer
     script.

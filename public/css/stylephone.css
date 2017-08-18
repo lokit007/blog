@@ -1,0 +1,41 @@
+/* max 480 */
+@media all and (max-width: 480px) {
+	article {
+		width: 100%;
+		min-height: 300px;
+	}
+	aside {
+		width: 100%;
+		min-height: 100px;
+	}
+	header #div-logo img {
+		max-width: 100%;
+		width: 100%;
+		height: 150px;
+	}
+	header #div-solo h1 {
+		font-size: 1.5em;
+		margin-top: -50px;
+		text-shadow: 1px -1px 3px white;
+		padding: 0px 5px;
+	}
+	header #div-solo p {
+		display: none;
+	}
+	form.navbar-form.navbar-left {
+		display: none;
+	}
+	#search-phone {
+		display: inherit;
+		position: absolute;
+		padding: 15px;
+		margin: 0px;
+		top: -120px;
+		z-index: 999;
+		border: none;
+	}
+}
+/* min 481 max 599 */
+@media all and (min-width: 481px) and (max-width: 599px) {
+	
+}
