@@ -40,6 +40,31 @@ html(lang="#{ clanguage }")
 		article
 			block content
 		aside
-			p aside
+			block hotpost
+				.div-hotpost
+					label Nội dung post
+					ul
+						li
+							.itempost
+								span Sat
+								span 26-02
+							a(href="#") Link đăng tải bài liên quan này Link đăng tải bài liên quan này
+						li
+							.itempost
+								span Sat
+								span 23-02
+							a(href="#") Link đăng tải bài liên quan này Link đăng tải bài liên quan này
+						li
+							.itempost
+								span Sat
+								span 20-02
+							a(href="#") Link đăng tải bài liên quan này Link đăng tải bài liên quan này
+			block image
+				#div-image
+					img(src="http://via.placeholder.com/350x150", alt="Minh họa thôi mà")
+			block slide
+			block video
+				iframe(width="100%", src="https://www.youtube.com/embed/XGSy3_Czz8k?controls=0")
 		footer
+			include files/_footer
 			block footer

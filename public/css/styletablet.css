@@ -1,5 +1,17 @@
 
 /* min 600 max 980 */
 @media all and (min-width: 600px) and (max-width: 980px) {
-		
+	header #div-logo img {
+		max-width: 22%;
+		float: left;
+		margin-right: 1%;
+	}
+	header #div-solo {
+		float: left;
+		max-width: 70%;
+	}
+	ul.nav.navbar-nav.navbar-right {
+		position: absolute;
+		right: 3%;
+	}
 }

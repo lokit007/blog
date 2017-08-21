@@ -4,30 +4,35 @@ body {
 .clear {
     clear: both;
 }
+span.notnull {
+    color: red;
+    margin-left: 5px;
+}
 /* Style Error */
 label.error {
     color: red;
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-top: 3px;
+    font-size: 0.9em;
+    display: block;
 }
 input.error {
     border-color: red;
 }
 header {
     min-height: 150px;
-    border: 1px solid;
     margin-bottom: 2px;
 }
 nav {
     min-height: 50px;
-    border: 1px solid;
     margin-bottom: 2px;
 }
 article {
     min-height: 500px;
     width: 75%;
-    border: 1px solid;
     margin-bottom: 2px;
     float: left;
+    padding: 0px 10px 10px 5px;
 }
 aside {
     width: 25%;
@@ -35,10 +40,13 @@ aside {
     border: 1px solid;
     margin-bottom: 2px;
     min-height: 500px;
+    overflow: hidden;
+    padding: 5px 10px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
 }
 footer {
     clear: both;
-    border: 1px solid;
 }
 /* header */
 header #div-logo img {
@@ -81,4 +89,106 @@ div#div-solo p {
 }
 #search-phone {
     display: none;
+}
+/* Footer */
+footer>span {
+    display: block;
+    border-bottom: 2px solid lightgray;
+    padding: 10px 10px 0px 10px;
+    font-style: italic;
+    font-weight: 600;
+    color: gray;
+}
+.footer-sub {
+    width: 30%;
+    overflow: hidden;
+    padding: 20px 0px 5px 5%;
+    float: left;
+}
+.footer-sub>label {
+    display: block;
+}
+.footer-sub>form>span {
+    font-weight: 600;
+    font-style: italic;
+    color: gray;
+}
+/* aside */
+/* Aside hot post */
+.div-hotpost {
+    max-height: 380px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.div-hotpost>ul {
+    padding: 0px;
+}
+.div-hotpost>ul>li {
+    list-style: none;
+    clear: both;
+    display: inline-block;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+.itempost {
+    width: 50px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    float: left;
+    margin-right: 10px;
+}
+.div-hotpost>label {
+    display: block;
+    border-bottom: 1px dashed lightgray;
+    font-size: 1.5em;
+}
+.itempost>span {
+    text-align: center;
+    display: block;
+}
+aside a:hover {
+    text-decoration: none;
+}
+.itempost>span:last-child {
+    font-size: 0.8em;
+    background-color: cadetblue;
+    color: white;
+    font-weight: 600;
+}
+.itempost>span:first-child {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: coral;
+    font-style: italic;
+}
+/* Aside img */
+div#div-image {
+    margin-bottom: 10px;
+}
+div#div-image>img {
+    width: 100%;
+    margin-bottom: 5px;
+}
+/* Aside video */
+
+/* login */
+form#login {
+    margin: auto;
+    max-width: 35%;
+    border: 1px solid lightgray;
+    padding: 15px;
+    border-radius: 5px;
+}
+form#login>h2 {
+    text-align: center;
+    font-weight: 600;
+    color: brown;
+    margin: 0px;
+    text-shadow: 2px 1px 1px grey;
+}
+form#login>button, form#login>label {
+    margin: 10px 0px;
+}
+div#helplogin>i {
+    margin-right: 10px;
 }

@@ -1,0 +1,28 @@
+extends ../template
+
+block content
+	form#login(action="/login", method="POST")
+		h2 #{ __("login-button-login") }		
+		if data 
+			.alert.alert-danger.alert-dismissable(role="alert")
+				button(type="button", data-dismiss="alert").close
+					span(aria-hidden="true") &times;
+					span.sr-only Close
+				strong #{ __("error") }
+				i= data
+			
+		label #{ __("login-label-user") }
+			span.notnull (*)
+		input(type="text", name="username", placeholder="#{ __('input-here') }")#username.form-control
+		label #{ __("login-label-pass") }
+			span.notnull (*)
+		input(type="password", name="password", placeholder="#{ __('input-here') }")#password.form-control
+		button(type="submit").btn.btn-primary.btn-block #{ __("login-button-login") }
+		#addlogin
+			#helplogin
+				i.fa.fa-question(aria-hidden="true")
+				a.a-left(href="resetpass") #{ __("login-reset-pass") }
+				br
+				i.fa.fa-user(aria-hidden="true")
+				a.a-right(href="signup") #{ __("login-signup") }
+block footer

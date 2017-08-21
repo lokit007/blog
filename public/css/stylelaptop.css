@@ -1,4 +1,6 @@
 /* min 481 max 599 */
 @media all and (min-width: 981px) {
-	
+	nav.navbar.navbar-default.affix-top {
+		font-size: 0.94em;
+	}
 }

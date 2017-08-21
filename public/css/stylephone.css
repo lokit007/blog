@@ -34,6 +34,13 @@
 		z-index: 999;
 		border: none;
 	}
+	.footer-sub {
+		width: 90%;
+		overflow: hidden;
+		border-bottom: 1px dashed lightgray;
+		margin: auto;
+		margin-top: 15px;
+	}
 }
 /* min 481 max 599 */
 @media all and (min-width: 481px) and (max-width: 599px) {
