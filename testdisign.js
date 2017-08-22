@@ -3,9 +3,14 @@ let session = require('express-session');
 let i18n = require("i18n");
 let app = express();
 let port = process.env.PORT || 3000;
+let mysql = require("mysql");
+let Db = require("./models/database.js");
+let configData = require("./configs/connection-data.js");
+let pool = mysql.createPool(configData.dataonline);
+let ThanhVien = require("./models/thanhvien.js");
 
 app.set("view engine", "jade");
-app.set("views", __dirname + "/views1");
+app.set("views", __dirname + "/views");
 app.use(express.static(__dirname + "/public"));
 app.use(session({
 	secret: 'Session module',
@@ -87,4 +92,35 @@ app.get("/", (req, res) => {
 
 app.get("/login", (req, res) => {
     res.render("thanhvien/login");
+});
+
+app.get("/signup", (req, res) => {
+    res.render("thanhvien/signup");
+});
+
+app.get("/info/:user", (req, res) => {
+    let db = new Db(pool);
+    let sql = "select * from thanhvien where UserName = N? limit 1";
+
+    try {
+        let userinfo = req.params.user;
+        if(userinfo != undefined) {
+            db.getData(sql, [userinfo])
+            .then((data) => {
+                if(data.length > 0) {
+                    let objresult = ThanhVien.getDataResult(data[0]);
+                    res.render("thanhvien/info", {data: objresult});
+                } else {
+                    res.render("home", {data: "Thành viên không tồn tại trong hệ thống!!!"});
+                }
+            })
+            .catch((err) => {
+                console.log("thanhvien.js line 125 : " + err);
+                res.render("home", {data: "Thành viên không tồn tại trong hệ thống!!!"});
+            });
+        } else res.render("home", {data: "Thành viên không tồn tại trong hệ thống!!!"});
+    } catch (error) {
+        console.log("thanhvien.js line 130 : " + error);
+        res.render("home", {data: "Thành viên không tồn tại trong hệ thống!!!"});
+    }
 });

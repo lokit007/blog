@@ -41,6 +41,13 @@
 		margin: auto;
 		margin-top: 15px;
 	}
+	/* info */
+	div#icon-user, div#info-user {
+		max-width: 96%;
+		float: none;
+		margin: auto;
+	}
+
 }
 /* min 481 max 599 */
 @media all and (min-width: 481px) and (max-width: 599px) {

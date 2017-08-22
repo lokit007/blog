@@ -1,0 +1,28 @@
+extends template
+
+block content
+	form#post(action="/post", method="POST")
+		h2 Chia sẻ kiến thức, bài viết tâm huyết của bản thân
+		#info-post
+			label Tiêu đề
+				span.notnull (*)
+			input(type="text", name="username", placeholder="#{ __('input-here') }")#username.form-control
+			label Chuyên mục
+				span.notnull (*)
+			input(type="text", name="username", placeholder="#{ __('input-here') }")#username.form-control
+			label Nội dung muốn truyền tải
+				span.notnull (*)
+			textarea(name="username", rows="5")#username.form-control
+		textarea(name="content", rows="15")
+		#info-more
+			label Tác giả
+			input(type="text", name="review", placeholder="#{ __('input-here') }").form-control
+			label Nguồn bài viết
+			input(type="text", name="review", placeholder="#{ __('input-here') }").form-control
+			label Tag
+			input(type="text", name="review", placeholder="#{ __('input-here') }").form-control
+block footer
+	script.
+		CKEDITOR.replace('content', {
+			customConfig: 'config-min.js'
+		});

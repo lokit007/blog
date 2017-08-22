@@ -1,4 +1,5 @@
 CKEDITOR.editorConfig = function( config ) {
+	config.height = '30em';
 	config.filebrowserBrowseUrl = '/file-manager';
 	config.filebrowserUploadUrl = '/uploadfiles';
 	
@@ -18,5 +19,5 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'about', groups: [ 'about' ] }
 	];
 
-	config.removeButtons = 'Save,Print,Preview,NewPage,Templates,Cut,Copy,Paste,PasteText,PasteFromWord,SelectAll,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,CopyFormatting,RemoveFormat,BidiLtr,BidiRtl,Anchor,Flash,PageBreak,Iframe,Maximize,ShowBlocks,About,Language,Outdent,Indent,Blockquote,CreateDiv,Subscript,Superscript,Format,Find,Replace';
+	config.removeButtons = 'Save,Print,Preview,NewPage,Templates,Cut,Copy,Paste,PasteText,PasteFromWord,SelectAll,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,CopyFormatting,RemoveFormat,BidiLtr,BidiRtl,Anchor,Flash,PageBreak,Iframe,ShowBlocks,About,Language,Outdent,Indent,Blockquote,CreateDiv,Subscript,Superscript,Format,Find,Replace';
 };

@@ -83,12 +83,27 @@ div#div-solo p {
 .affix {
     top: 0;
     width: 100%;
+    z-index: 999;
 }
 .affix + .container-fluid {
     padding-top: 70px;
 }
 #search-phone {
     display: none;
+}
+div#user {
+    font-weight: 600;
+    font-size: 1.2em;
+}
+div#user>img {
+    width: 40px;
+    height: 34px;
+    margin: 8px 5px;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+.navbar-nav>.active>a {
+    cursor: no-drop;
 }
 /* Footer */
 footer>span {
@@ -179,16 +194,82 @@ form#login {
     padding: 15px;
     border-radius: 5px;
 }
-form#login>h2 {
+form#login>h2, form#signup>h2, form#post>h2 {
     text-align: center;
     font-weight: 600;
     color: brown;
-    margin: 0px;
+    margin: 0px 0px 10px;
     text-shadow: 2px 1px 1px grey;
 }
-form#login>button, form#login>label {
+form#login>button, form#login>label, form#signup>button, form#signup>label, form#post>div>button, form#post>div>label {
     margin: 10px 0px;
 }
 div#helplogin>i {
     margin-right: 10px;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes opacitydelay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@-o-keyframes opacitydelay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@-moz-keyframes opacitydelay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* Standard syntax */
+@keyframes opacitydelay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.animation {
+    -o-animation-name: opacitydelay;
+    -moz-animation-name: opacitydelay;
+    -webkit-animation-name: opacitydelay; /* Safari 4.0 - 8.0 */
+    animation-name: opacitydelay; 
+    -o-animation-duration: 5s;
+    -moz-animation-duration: 5s;
+    -webkit-animation-duration: 5s; /* Safari 4.0 - 8.0 */
+    animation-duration: 5s;
+}
+/* signup */
+form#signup, form#post {
+    max-width: 95%;
+    margin: auto;
+}
+/* info */
+div#icon-user {
+    max-width: 30%;
+    float: left;
+    margin-right: 2%;
+}
+div#info-user {
+    max-width: 68%;
+    float: left;
+}
+div#info-user>label:first-child {
+    font-size: 2.5em;
+    color: brown;
+    text-shadow: 2px 1px 2px grey;
+}
+div#info-user>label {
+    display: block;
+}
+div#info-user>button {
+    margin-right: 10px;
+    min-width: 90px;
+    margin-bottom: 5px;
+}
+div#info {
+    margin-top: 10px;
+}
+/* Post */
+div#info-post, div#info-more {
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    padding: 0px 10px 10px;
+    margin: 10px 0px;
 }

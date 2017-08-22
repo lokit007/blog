@@ -30,5 +30,7 @@
 	"update-label-change-pass": "update-label-change-pass",
 	"update-button-change-pass": "update-button-change-pass",
 	"update-label-change-info": "update-label-change-info",
-	"update-button-change-info": "update-button-change-info"
+	"update-button-change-info": "update-button-change-info",
+	"login-error-user-pass": "login-error-user-pass",
+	"error": "error"
 }
