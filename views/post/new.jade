@@ -1,4 +1,4 @@
-extends template
+extends ../template
 
 block content
 	form#post(action="/post", method="POST")
@@ -6,10 +6,12 @@ block content
 		#info-post
 			label Tiêu đề
 				span.notnull (*)
-			input(type="text", name="username", placeholder="#{ __('input-here') }")#username.form-control
+			input(type="text", name="tieude", placeholder="#{ __('input-here') }")#username.form-control
 			label Chuyên mục
 				span.notnull (*)
-			input(type="text", name="username", placeholder="#{ __('input-here') }")#username.form-control
+			select(name="danhmuc").form-control
+				for val in data
+					option(value="#{ val.id}") #{ val.name}
 			label Nội dung muốn truyền tải
 				span.notnull (*)
 			textarea(name="username", rows="5")#username.form-control

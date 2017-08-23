@@ -160,8 +160,8 @@ app.get("/", function(req, res, next){
 	}
     res.render("home");
 });
-app.get("/post", function(req, res, next){
-    res.render("post");
+app.get("/post1", function(req, res, next){
+    res.render("post/new");
 });
 app.get("/demo", function(req, res, next){
     res.render("htmldemo");
@@ -169,3 +169,4 @@ app.get("/demo", function(req, res, next){
 
 require("./routes/filemanager.js")(app, pool);
 require("./routes/thanhvien.js")(app, pool);
+require("./routes/post.js")(app, pool);
