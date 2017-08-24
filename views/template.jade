@@ -31,9 +31,6 @@ html(lang="#{ clanguage }")
 			#div-language.btn-group
 				img(src="images/icons/#{ clanguage }.png", data-toggle="dropdown")
 				ul(class="dropdown-menu dropdown-menu-right", role="menu")
-					script.
-						var page = window.location.pathname;
-						alert(page);
 					for lg in languages
 						li: a(href="#{ page }?lang=#{ lg }") #{ __(lg) }
 							img(src="images/icons/#{ lg }.png")

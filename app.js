@@ -140,6 +140,7 @@ app.use(function(req, res, next){
         // }
     }
     res.locals.active = 1;
+    res.locals.page = req.path;
     res.locals.clanguage = req.getLocale();
     res.locals.languages = i18n.getLocales();
     req.session.mes = null;

@@ -12,7 +12,6 @@ module.exports = (app, pool) => {
 				datas.map((category) => {
 					results.push({id: category.IdDanhMuc, name: category.TieuDe});
 				});
-				console.log(results);
 				res.render("post/new", {data: results});
 			})
 			.catch((err) => {
