@@ -1,0 +1,21 @@
+doctype html
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title= title || "Demo chat"
+		script(src="js/jquery-3.1.1.min.js")
+		script(src="/socket.io/socket.io.js")
+	body
+		.group-chat
+			.tittle-chat
+				span Name chat | Group chat
+			.message-chat
+				.message
+					span#nick Nhan
+					p#messages Nội dung tin nhắn này
+			.send-chat
+				form(action="#", method="POST")
+					input(type="text", placeholder="Input here ...")

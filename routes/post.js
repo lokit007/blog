@@ -1,7 +1,7 @@
 let Db = require("../models/database.js");
 
 module.exports = (app, pool) => {
-	app.get("/post", (req, res, next) => {
+	app.get("/posts", (req, res, next) => {
 		let sql = "select IdDanhMuc, PhanCap, HienThi, DanhMucCha, Icon, TieuDe from ngonngu inner join danhmuc on ngonngu.IdLienKet = danhmuc.IdDanhMuc where NgonNguChon = ?";
 		let results = new Array();
 		let db = new Db(pool);
@@ -20,5 +20,9 @@ module.exports = (app, pool) => {
 		} catch (error) {
 			res.send("Lỗi" + error);
 		}
+	});
+
+	app.post("/posts", (req, res, next) => {
+
 	});
 }

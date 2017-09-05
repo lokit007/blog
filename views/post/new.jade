@@ -1,7 +1,7 @@
 extends ../template
 
 block content
-	form#post(action="/post", method="POST")
+	form#post(action="/posts", method="POST", enctype="multipart/form-data")
 		h2 Chia sẻ kiến thức, bài viết tâm huyết của bản thân
 		#info-post
 			label Tiêu đề
@@ -14,15 +14,17 @@ block content
 					option(value="#{ val.id}") #{ val.name}
 			label Nội dung muốn truyền tải
 				span.notnull (*)
-			textarea(name="username", rows="5")#username.form-control
+			textarea(name="mota", rows="5")#username.form-control
 		textarea(name="content", rows="15")
 		#info-more
+			label Hình ảnh minh họa
+			input(type="file", name="icon", placeholder="#{ __('input-here') }").form-control
 			label Tác giả
-			input(type="text", name="review", placeholder="#{ __('input-here') }").form-control
+			input(type="text", name="tacgia", placeholder="#{ __('input-here') }").form-control
 			label Nguồn bài viết
-			input(type="text", name="review", placeholder="#{ __('input-here') }").form-control
+			input(type="text", name="nguon", placeholder="#{ __('input-here') }").form-control
 			label Tag
-			input(type="text", name="review", placeholder="#{ __('input-here') }").form-control
+			input(type="text", name="tag", placeholder="#{ __('input-here') }").form-control
 			span.help-block Tag phân cách nhau bởi dấu ; ví dụ : share; website
 block footer
 	script.
